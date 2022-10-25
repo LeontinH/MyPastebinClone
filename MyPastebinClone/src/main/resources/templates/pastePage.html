@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Pastebin</title>
+</head>
+<body>
+<div class="container my-2">
+  <center>
+    <fieldset style="width:700px">
+      <h1 align="center">Paste list page</h1>
+      <div>
+        <a th:href="@{'/addPaste'}"><button style="float: left">Add new paste</button></a>
+        <a th:href="@{'/users'}"><button style="float: right">Go to users list</button></a>
+        <form th:action="@{/logout}" method="post">
+          <button type="submit" style="float: center">Sign Out</button>
+        </form>
+      </div>
+    </fieldset>
+  </center>
+  <br />
+  <h4 align="center">Paste list table</h4>
+  <table border="1" class="table table-striped table-responsive-md" align="center">
+    <thead>
+    <tr>
+      <th>Paste title</th>
+      <th>Paste text</th>
+      <th>Paste author</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="pastebin : ${pasteList}">
+      <td th:text="${pastebin.title}">Paste title</td>
+      <td th:text="${pastebin.text}">Paste text</td>
+      <td th:text="${pastebin.author}">Paste author</td>
+      <td><a th:href="@{'/editPaste/' + ${pastebin.id}}">Edit</a></td>
+      <td><a th:href="@{'/deletePaste/' + ${pastebin.id}}">Delete</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
