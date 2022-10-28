@@ -15,30 +15,30 @@
   </div>
   <div class="card">
   <br>
-  <form method="post" th:action="@{/login}" th:object="${loginRequest}" >
-    <center>
-      <br>
-      <fieldset style="width:0px" align="center">
-        <legend align="center">Login</legend>
-        <div class="input_box">
-          <input type="text" id="username" name="username" class="form-control" placeholder="Username" required/>
-          <div class="form__shadow"></div>
-        </div>
-        <div class="input_box">
-          <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-          <div class="form__shadow"></div>
-        </div>
+    <form method="post" th:action="@{/login}" th:object="${loginRequest}" >
+      <center>
         <br>
-        <div class="input_box">
-          <input type="submit" name="sign in" value="Login">
-        </div>
-        <br>
-        <a href="/register">Navigate to registration</a>
-        <br> <br>
-      </fieldset>
-    </center>
-  </form>
-</div>
+        <fieldset style="width:0px" align="center">
+          <legend align="center">Login</legend>
+          <div class="input_box">
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required/>
+            <div class="form__shadow"></div>
+          </div>
+          <div class="input_box">
+            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+            <div class="form__shadow"></div>
+          </div>
+          <br>
+          <div class="input_box">
+            <input type="submit" name="sign in" value="Login">
+          </div>
+          <br>
+          <a href="/register">Navigate to registration</a>
+          <br> <br>
+        </fieldset>
+      </center>
+    </form>
+  </div>
 </div>
 </body>
 </html>

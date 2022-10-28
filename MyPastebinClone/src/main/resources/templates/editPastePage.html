@@ -25,18 +25,16 @@
         <fieldset style="width:500px">
           <form action="#" th:action="@{/savePaste}" th:object="${pastebin}" method="POST">
             <input type="hidden" th:field="*{id}"/>
-            <div class="example">Please modify the title in the below area!</div>
-            <input type="text" th:field="*{title}" class="form-control mb-4 col-4">
-            <br />
-            <br />
-            <div class="example">Please modify the paste content in the below area!</div>
-            <textarea th:field="*{text}" class="form-control mb-4 col-4"></textarea>
-            <br />
-            <br />
-            <br> <br>
-            <div class="example">Please add your name in the bellow area, as a secondary author!</div>
-            <input type="text" th:field="*{author}" class="form-control mb-4 col-4">
-            <br> <br>
+              <div class="example">Please modify the title in the below area!</div>
+              <input type="text" th:field="*{title}" class="form-control mb-4 col-4">
+              <br />
+              <br />
+                <div class="example">Please modify the paste content in the below area!</div>
+                  <textarea th:field="*{text}" class="form-control mb-4 col-4"></textarea>
+                    <br /> <br /> <br> <br>
+                <div class="example">Please add your name in the bellow area, as a secondary author!</div>
+              <input type="text" th:field="*{author}" class="form-control mb-4 col-4">
+              <br> <br>
             <div class="col">
               <button type="submit" class="btn btn-info col-2">Update the paste</button>
             </div>

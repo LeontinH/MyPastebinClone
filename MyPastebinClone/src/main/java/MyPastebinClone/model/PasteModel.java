@@ -1,8 +1,5 @@
 package MyPastebinClone.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 import javax.persistence.*;
 
 @Entity
@@ -23,27 +20,33 @@ public class PasteModel {
     @Lob
     @Column(name = "text")
     private String text;
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "author", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
-    public Long getId() {return paste_id;}
 
-    public void setId(Long paste_id) {this.paste_id = paste_id;}
+    public Long getId() {
+        return paste_id;}
 
-    public String getTitle() {return title;}
+    public void setId(Long paste_id) {
+        this.paste_id = paste_id;}
 
-    public void setTitle(String title) {this.title = title;}
+    public String getTitle() {
+        return title;}
 
-    public String getText() {return text;}
+    public void setTitle(String title) {
+        this.title = title;}
 
-    public void setText(String text) {this.text = text;}
+    public String getText() {
+        return text;}
 
-    public String getAuthor() {return author;}
+    public void setText(String text) {
+        this.text = text;}
 
-    public void setAuthor(String author) {this.author = author;}
+    public String getAuthor() {
+        return author;}
 
-    public PasteModel() {}
+    public void setAuthor(String author) {
+        this.author = author;}
+
+    public PasteModel() {
+    }
 
     public PasteModel(Long paste_id, String title, String text, String author) {
         this.paste_id = paste_id;

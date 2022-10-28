@@ -31,7 +31,6 @@ public class UserController {
         return "loginPage";
     }
 
-    // handler method to handle user registration request
     @GetMapping("register")
     public String showRegistrationForm(Model model){
         DTOModel user = new DTOModel();
@@ -39,7 +38,6 @@ public class UserController {
         return "registerPage";
     }
 
-    // handler method to handle register user form submit request
     @PostMapping("/register")
     public String registration(@Valid @ModelAttribute("user") DTOModel user,
                                BindingResult result,

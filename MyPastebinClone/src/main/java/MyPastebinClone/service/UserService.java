@@ -28,13 +28,12 @@ public class UserService {
         UserModel user = new UserModel();
         user.setUserName(dtoModel.getUserName());
         user.setEmail(dtoModel.getEmail());
-
         user.setPassword(passwordEncoder.encode(dtoModel.getPassword()));
         RoleModel role = roleRepository.findByRoleName("ROLE_ADMIN");
         if(role == null){
             role = checkRoleExist();
         }
-        user.setRoles(Arrays.asList(role));
+        user.setRoles(List.of(role));
         userRepository.save(user);
     }
 
