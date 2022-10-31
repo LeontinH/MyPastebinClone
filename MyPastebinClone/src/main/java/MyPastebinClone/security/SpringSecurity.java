@@ -31,15 +31,15 @@ public class SpringSecurity {
                 .antMatchers("/register/**").permitAll()
                 .antMatchers("/homePage").permitAll()
                 .antMatchers("/users").hasRole("ADMIN")
-                .antMatchers("/pasteList").hasRole("ADMIN")
-                .antMatchers("/addPaste").hasRole("ADMIN")
-                .antMatchers("/savePaste").hasRole("ADMIN")
+                .antMatchers("/paste/list").hasRole("ADMIN")
+                .antMatchers("/add/paste").hasRole("ADMIN")
+                .antMatchers("/save/paste").hasRole("ADMIN")
                 .and().
                 formLogin(
                         form -> form
                                 .loginPage("/login")
                                 .loginProcessingUrl("/login")
-                                .defaultSuccessUrl("/pasteList")
+                                .defaultSuccessUrl("/paste/list")
                                 .permitAll()
                 ).logout(
                         logout -> logout

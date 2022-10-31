@@ -10,7 +10,7 @@
     <fieldset style="width:700px">
       <h1 align="center">Paste list page</h1>
       <div>
-        <a th:href="@{'/addPaste'}"><button style="float: left">Add new paste</button></a>
+        <a th:href="@{'/add/paste'}"><button style="float: left">Add new paste</button></a>
         <a th:href="@{'/users'}"><button style="float: right">Go to users list</button></a>
         <form th:action="@{/logout}" method="post">
           <button type="submit" style="float: center">Sign Out</button>
@@ -35,8 +35,8 @@
       <td th:text="${pastebin.title}">Paste title</td>
       <td th:text="${pastebin.text}">Paste text</td>
       <td th:text="${pastebin.author}">Paste author</td>
-      <td><a th:href="@{'/editPaste/' + ${pastebin.id}}">Edit</a></td>
-      <td><a th:href="@{'/deletePaste/' + ${pastebin.id}}">Delete</a></td>
+      <td><a th:href="@{'/edit/paste/' + ${pastebin.id}}">Edit</a></td>
+      <td><a th:href="@{'/delete/paste/' + ${pastebin.id}}">Delete</a></td>
     </tr>
     </tbody>
   </table>

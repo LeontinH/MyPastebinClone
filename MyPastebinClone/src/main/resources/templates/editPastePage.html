@@ -11,7 +11,7 @@
       <fieldset style="width:500px">
         <h1 align="center">Edit Paste</h1>
         <div>
-          <a th:href="@{/pasteList}"><button style="float: left;">Back to Paste List</button></a>
+          <a th:href="@{/paste/list}"><button style="float: left;">Back to Paste List</button></a>
           <form th:action="@{/logout}" method="post">
             <button type="submit" style="float:right">Sign Out</button>
           </form>
@@ -23,7 +23,7 @@
     <div class="col">
       <center>
         <fieldset style="width:500px">
-          <form action="#" th:action="@{/savePaste}" th:object="${pastebin}" method="POST">
+          <form action="#" th:action="@{/save/paste}" th:object="${pastebin}" method="POST">
             <input type="hidden" th:field="*{id}"/>
               <div class="example">Please modify the title in the below area!</div>
               <input type="text" th:field="*{title}" class="form-control mb-4 col-4">

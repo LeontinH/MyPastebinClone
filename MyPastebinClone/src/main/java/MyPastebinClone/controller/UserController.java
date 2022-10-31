@@ -31,7 +31,7 @@ public class UserController {
         return "loginPage";
     }
 
-    @GetMapping("register")
+    @GetMapping("/register")
     public String showRegistrationForm(Model model){
         DTOModel user = new DTOModel();
         model.addAttribute("user", user);
